@@ -25,7 +25,15 @@ namespace InterWorldCSharp.Controllers
 
         public IActionResult Destinations()
         {
-            return View();
+            List<CidadeModel> model = new List<CidadeModel>();
+            model.Add(new CidadeModel() { Nome = "Taquaritinga", descricao = "cidade pequena", pais = "Brasil" });
+            model.Add(new CidadeModel() { Nome = "matao", descricao = "cidade pequena", pais = "Brasil" });
+            model.Add(new CidadeModel() { Nome = "itaolis", descricao = "cidade pequena", pais = "Brasil" });
+            model.Add(new CidadeModel() { Nome = "avare", descricao = "cidade pequena", pais = "Brasil" });
+            model.Add(new CidadeModel() { Nome = "sp", descricao = "cidade pequena", pais = "Brasil" });
+            model.Add(new CidadeModel() { Nome = "btu", descricao = "cidade pequena", pais = "Brasil" });
+            model.Add(new CidadeModel() { Nome = "araraqyuara", descricao = "cidade pequena", pais = "Brasil", img="download.jpg" });
+            return View(model);
         }
 
         public IActionResult About()
