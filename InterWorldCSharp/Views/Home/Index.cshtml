@@ -2,10 +2,45 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@foreach (var item in Model)
+{
+  <section class="pt-1">
+        <div class="container">
+          <div class="row d-flex containerslider">
+            <div
+              class="col-lg-4 col-md-6 align-self-center mb-md-0 mb-4 textslider"
+            >
+              <h1>
+                @item.titulo1 <br/> @item.titulo2
+              </h1>
+              <p class="mb-4 mt-3 text-xs-center">
+                blablabla <br /> blablabla
+              </p>
+              <div class="divbuttons">
+                <a
+                    href=""
+                  class= "button btn btn-primary button-primary d-md-inline-block d-block mb-md-0 mb-2 mr-md-2 buttons button1"
+                >
+                 
+                  {dictionary?.button1}
+                </a>
+                <a
+                href="#"
+                class="button btn btn-outline-primary button-primary-outline d-md-inline-block d-blockbuttons buttons buttoncontact">
+                   {dictionary?.button2}</a> 
+              </div>
+            </div>
+            <div class="col-lg-8 col-md-4 text-center divimg">
+              <img src="/img/@item.sliderimg" class= "mt-n-2 img-fluid img"/>
+            </div>
+          </div>
+        </div>
+        </section>
+
+}
+
 
 <img src="/img/download.jpg" />
-
+@section CSS{
+     <link rel="stylesheet" href="~/css/Destinations.css" asp-append-version="true" />
+}

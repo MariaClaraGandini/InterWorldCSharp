@@ -54,7 +54,7 @@ h1 {
 
 
 /* /////////RESPONSIVE////////////*/
-@media (max-width:768px) {
+@media (max-width:767px) {
     h1 {
         text-align: center;
     }
@@ -75,11 +75,7 @@ h1 {
         font-size: 1rem;
     }
 
-
-    .divimg {
-        width: 50%;
-    }
-
+  
     .img {
         width: 100%;
         margin-top: 6%
@@ -95,7 +91,7 @@ h1 {
 
 }
 /* ///////////////// 768px ///////////// */
-@media (min-width: 769px) {
+@media (min-width: 768px) {
 
     .containerslider {
         margin-left: 4%;
@@ -197,7 +193,7 @@ h1 {
     }
 
     .divimg {
-        width: 60%;
+        width: 80%;
     }
 
     h4 {
@@ -235,7 +231,8 @@ h1 {
 @media (min-width:1199px) {
 
     .img {
-        width: 90%;
+        width: 80%;
+        margin-top: -1.75%;
     }
 
     .textslider {

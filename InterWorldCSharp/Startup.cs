@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace InterWorldCSharp
@@ -24,6 +25,15 @@ namespace InterWorldCSharp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<Context>(a => a.UseMySQL("server=localhost;database=InterWorld; user=root;password=; SslMode=none"));
+            services.AddAuthentication("CookieAuthentication").AddCookie("CookieAuthentication", option =>
+            {
+                option.LoginPath = "/Login/Login";
+            });
+
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +54,7 @@ namespace InterWorldCSharp
 
             app.UseRouting();
 
+            _ = app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -54,4 +65,5 @@ namespace InterWorldCSharp
             });
         }
     }
+;
 }
