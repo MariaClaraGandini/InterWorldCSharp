@@ -27,7 +27,9 @@ h1 {
     height: 20em;
     margin-left: 0.5%;
 }
-
+.cardp{
+    height:100%
+}
 .cardtext {
     margin-top: 1%
 }
@@ -40,21 +42,22 @@ h1 {
     background-color: #b23cfd;
 }
 
-     .buttoncontact{
+    /* .buttoncontact{
       border-color: #b23cfd;
       color: #b23cfd;
-    } 
+    } */
     .button1:hover {
         background-color: #9737d3;
     }
-.buttoncontact:hover {
-    background-color: #9737d3;
-    color:white
-}
 
+/* .buttoncontact:hover{
+      color: white;
+      border-color: #b23cfd;
+    } */
 
 /* /////////RESPONSIVE////////////*/
-@media (max-width:767px) {
+
+@media (max-width:768px) {
     h1 {
         text-align: center;
     }
@@ -62,8 +65,28 @@ h1 {
     h4 {
         text-align: center;
     }
+    .card{
+        width:40%;
+        margin-bottom:5%;
+    }
+    .paisdiv {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 5%;
+        margin-bottom: 5%;
+    }
 }
-
+@media (max-width:530px) {
+    .card {
+        width: 50%;
+    }
+ 
+    .cardtext{
+        text-align:center;
+    }
+}
 
 @media (min-width:768px) {
     .h1 {
@@ -75,11 +98,16 @@ h1 {
         font-size: 1rem;
     }
 
-  
+
+    .divimg {
+        width: 50%;
+    }
+
     .img {
         width: 100%;
         margin-top: 6%
     }
+  
 
     .buttons {
         margin-left: 20%;
@@ -88,10 +116,11 @@ h1 {
     /* .buttoncontact {
       margin-left: 2%;
     } */
+    
 
 }
 /* ///////////////// 768px ///////////// */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 
     .containerslider {
         margin-left: 4%;
@@ -162,6 +191,7 @@ h1 {
     .cidadediv2 {
         width: 32%;
     }
+
 }
 /* SLIDER */
 /* PAISES */
@@ -193,7 +223,7 @@ h1 {
     }
 
     .divimg {
-        width: 80%;
+        width: 60%;
     }
 
     h4 {
@@ -204,17 +234,13 @@ h1 {
         font-size: 85%;
     }
 
-    .divcard {
-        width: 90%;
-    }
-
     .card {
         width: 24%;
         margin-left: 0.5em;
     }
-
+   
     .cardtext {
-        font-size: 75%;
+        font-size: 85%;
     }
 
     #margin {
@@ -224,15 +250,14 @@ h1 {
 
 @media (min-width:1107px) {
     .container, .divcard {
-        margin-left: 4%;
+        margin-left: 10%;
     }
 }
 /* ///////////// 1200 //////////// */
 @media (min-width:1199px) {
 
     .img {
-        width: 80%;
-        margin-top: -1.75%;
+        width: 90%;
     }
 
     .textslider {

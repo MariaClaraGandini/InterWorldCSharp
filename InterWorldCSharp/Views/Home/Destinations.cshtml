@@ -4,91 +4,74 @@
 *@
 @{
 }
- <section class="pl-n-5">
-        <div class="container">
-          <div class="row d-flex containerslider">
-            <div
-              class="col-lg-4 col-md-6 align-self-center mb-md-0 mb-4 textslider"
-            >
-              <h1>
-                teste <br /> test
-              </h1>
-              <h4 class="mb-4 mt-3 text-xs-center">
-                blablabla <br /> blablabla
-              </h4>
-              <div class="divbuttons">
-                <a
-                    href=""
+ 
+<section class="mt-5 ">
+        <div class="container marginslide">
+          <div class="row  d-flex justify-content-center containerslider">
+            <div class="col-lg-4 col-md-6 align-self-center mb-md-0 mb-4 pt-3 textslider">
+              <h1 >Países para Intercâmbio</h1>
+              <h4 class="mb-4 mt-3">Conheça  os destinos incríveis <br /> que a InterWorld oferece!</h4>
+            <div class="divbuttons">
+               <a
+                    href="/Home/Budget"
                   class= "button btn btn-primary button-primary d-md-inline-block d-block mb-md-0 mb-2 mr-md-2 buttons button1"
                 >
                  
+                 Orçamentos
                 </a>
-                
+              </div>
             </div>
-            <div class="col-lg-8 col-md-4 text-centerdivimg">
-              <img src="" class= "img-fluidimg" />
+            <div class="col-lg-8 col-md-4 text-center divimg">
+              <img src="~/img/travel/slidertravel.png" class="img-fluid img" style="width:75%"/>
             </div>
           </div>
-        </div>
-        </section>
+          </div>
+      </section>
 
        @foreach (var item in Model){
         <section>
-        <div class= "container row">
+        <div class= "container row pais">
           <div class="col-md-4 col-sm-2 mt-5 paisdiv" >
             <h3>@item.pais</h3>
           </div>
         </div>
       </section>
       <section>
-        <div class= "divcard row">
-          <div class= "card rounded-5 d-flex" style= "background-image:url('/img/@item.img1')">
+        <div class= "divcard row justify-content-center ml-3">
+          <div class= "card rounded-5" style= "background-image:url('/img/@item.img1')">
             <div class="cardp"> 
-              <p class= "cardpmargin text-center text-uppercase">@item.nome</p>
-              <p class="cardtext">@item.cidade1</p>
-              <a href="/orcamentos" class="button btn btn-primary button-primary d-md-inline-block d-block button1">Pedir orçamento</a>
+              <p class= "cardpmargin text-center text-uppercase">@item.cidade1</p>
+              <p class="cardtext">@item.cidade1p</p>
+              <a href="/Home/Budget" class="button btn btn-primary button-primary d-md-inline-block d-block button1">Pedir orçamento</a>
             </div>
           </div>
           <div class= "card rounded-5 d-flex" style= "background-image: url('/img/@item.img2')">
             <div class="cardp">
-              <p class= "cardpmargin text-center text-uppercase mt-1">@item.nome</p>
-              <p class="cardtext">@item.cidade1</p>
-              <a href="/orcamentos" class="button btn btn-primary button-primary d-md-inline-block d-block button1">{dictionary?.Budget}</a>
+              <p class= "cardpmargin text-center text-uppercase mt-1">@item.cidade2</p>
+              <p class="cardtext">@item.cidade2p</p>
+              <a href="/Home/Budget" class="button btn btn-primary button-primary d-md-inline-block d-block button1">Pedir Orçamento</a>
             </div>
           </div>
           <div class= "card card2 rounded-5 d-flex" style= "background-image: url('/img/@item.img3')">
             <div class="cardp">
-              <p class= "cardpmargin text-center text-uppercase mt-2">@item.nome</p>
-              <p class="cardtext">@item.cidade1 </p>
-              <a href="/orcamentos" class="button btn btn-primary button-primary d-md-inline-block d-block button1" >{dictionary?.Budget}</a>
+              <p class= "cardpmargin text-center text-uppercase mt-2">@item.cidade3</p>
+              <p class="cardtext">@item.cidade3p </p>
+              <a href="/Home/Budget" class="button btn btn-primary button-primary d-md-inline-block d-block button1" >Pedir Orçamento</a>
             </div>
           </div>
           <div class= "card card2 rounded-5 d-flex" style= "background-image: url('/img/@item.img4')">
             <div class="cardp">
-              <p class= "cardpmargin text-center text-uppercase mt-l">@item.nome</p>
-              <p class="cardtext">@item.cidade1</p>
-              <a href="/orcamentos" class="button btn btn-primary button-primary d-md-inline-block d-block button1">{dictionary?.Budget}</a>
+              <p class= "cardpmargin text-center text-uppercase mt-l">@item.cidade4</p>
+              <p class="cardtext">@item.cidade4p</p>
+              <a href="/Home/Budget" class="button btn btn-primary button-primary d-md-inline-block d-block button1">Pedir Orçamento</a>
             </div>
           </div>
         </div>
+       
         </section>
      }
 
 
-
-
-
-
-
-
-           @foreach (var item in Model){
-             <div>
-                @item.nome<br>
-                @item.cidade1<br>
-                @item.pais<br>
-                <img src="/img/@item.img1"/>
-            </div>
-           }
        
 
 @section CSS{
