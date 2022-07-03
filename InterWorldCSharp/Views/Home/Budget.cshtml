@@ -1,5 +1,86 @@
-﻿@*
+﻿@model IEnumerable<InterWorldCSharp.Models.BudgetsDestinationModel>
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+}
+ <section class="container-budget">
+
+     <form class="d-flex flex-column justify-content-end w-responsive gap-2">
+  <!-- 2 column grid layout with text inputs for the first and last names -->
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example1" class="form-control" />
+        <label class="form-label" for="form6Example1">Nome</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example2" class="form-control" />
+        <label class="form-label" for="form6Example2">Sobre Nome</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input type="email" id="form6Example5" class="form-control" />
+    <label class="form-label" for="form6Example5">Email</label>
+  </div>
+
+    <!-- Destination -->
+    <div class="btn-group shadow-0">
+    @foreach (var (item, index) in Model.Select((value, index) => ( value, index)))
+    {
+        <input type="radio" class="btn-check" name="options" id="option-@index" autocomplete="off" @(index == 0 ? "checked" : "") />
+        <label class="btn btn-secondary rounded" for="option-@index">@item.City</label>
+    }
+    </div>
+<!-- Carousel wrapper -->
+ <section>
+<div id="carouselMaterialStyle" class="carousel slide carousel-fade carousel-container" data-mdb-ride="carousel">
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="0" class="active" aria-current="true"
+      aria-label="Slide 1"></button>
+    <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+  <!-- Inner -->
+  <div class="carousel-inner rounded-5 shadow-4-strong">
+    @foreach (var (item, index) in Model.Select((value, index) => ( value, index ))){
+      <div class="carousel-item @(index == 0 ? "active" : "")">
+        <img src="/img/@item.Img" class="d-block w-100 carousel-img"
+            alt="@item.City" />
+         <div class="carousel-caption d-none d-md-block">
+            <h5>@item.City</h5>
+            <p>@item.Country</p>
+         </div>
+      </div>
+     }
+  </div>
+  <!-- Inner -->
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+ </section>
+<!-- Carousel wrapper -->
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-secondary btn-block mb-4">Fazer orçamento</button>
+</form>
+ </section>
+
+@section CSS{
+     <link rel="stylesheet" href="~/css/Budget.css" asp-append-version="true" />
 }

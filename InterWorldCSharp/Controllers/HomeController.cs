@@ -122,7 +122,16 @@ namespace InterWorldCSharp.Controllers
         }
         public IActionResult Budget()
         {
-            return View();
+
+            List<BudgetsDestinationModel> BudgetsDestination = new List<BudgetsDestinationModel>();
+
+
+            BudgetsDestination.Add(new BudgetsDestinationModel(country: "França", city: "Marselha", img: "travel/mersalha-view.jpg"));
+            BudgetsDestination.Add(new BudgetsDestinationModel(country: "Estados Unidos", city: "Boston", img: "travel/boston-view.jpg"));
+            BudgetsDestination.Add(new BudgetsDestinationModel(country: "Espanha", city: "Madrid", img: "travel/madrid-view.jpg"));
+
+
+            return View(BudgetsDestination);
         }
         public IActionResult Login()
         {
